@@ -45,6 +45,7 @@ function displayLibrary () {
     deleteBookButton.classList.add("btn-delete-book");
     deleteBookButton.innerText = "Delete";
     deleteBookButton.id = book.index;
+    deleteBookButton.addEventListener("click",deleteBookFromLibrary);
     libraryDisplay.appendChild(deleteBookButton);
   });
 }
@@ -69,4 +70,14 @@ function submitBookToLibrary(event) {
   formContainer.reset();
   displayLibrary();
 
+}
+
+function deleteBookFromLibrary(event) {
+  const deleteBookButton = event.target;
+
+  myLibrary = myLibrary.filter(book => {
+    return +deleteBookButton.id !== book.index;
+  });
+
+  displayLibrary();
 }

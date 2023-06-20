@@ -35,11 +35,18 @@ function displayLibrary () {
 
   myLibrary.forEach(book => {
     let bookContents = Object.values(book);
-    for(let i=0; i<4; i++) {
+    for(let i=0; i<3; i++) {
       let content = document.createElement("div");
       content.innerText = bookContents[i];
       libraryDisplay.appendChild(content);
     }
+
+    let toggleReadStatusButton = document.createElement("button");
+    toggleReadStatusButton.classList.add("btn-toggle-read-status");
+    toggleReadStatusButton.innerText = book.read;
+    toggleReadStatusButton.id = book.index;
+    toggleReadStatusButton.addEventListener("click", toggleReadStatus);
+    libraryDisplay.appendChild(toggleReadStatusButton);
 
     let deleteBookButton = document.createElement("button");
     deleteBookButton.classList.add("btn-delete-book");
@@ -78,6 +85,15 @@ function deleteBookFromLibrary(event) {
   myLibrary = myLibrary.filter(book => {
     return +deleteBookButton.id !== book.index;
   });
+
+  displayLibrary();
+}
+
+function toggleReadStatus(event) {
+  const toggleReadStatusButton = event.target;
+  const bookToChangeIndex = +toggleReadStatusButton.id;
+  let bookToChange = myLibrary[bookToChangeIndex];
+  bookToChange.read = bookToChange.read === "Read" ? "Not Read" : "Read";
 
   displayLibrary();
 }

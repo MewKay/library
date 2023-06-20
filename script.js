@@ -2,6 +2,7 @@ let myLibrary = [];
 
 const libraryDisplay = document.querySelector("#books-display"); 
 const formContainer = document.querySelector(".form-container");
+const formPopUp = document.querySelector(".form-popup");
 const newBookButton = document.querySelector(".btn-add-book");
 const submitBookButton = document.querySelector(".btn-submit-book")
 const cancelFormButton = document.querySelector(".btn-cancel-form");
@@ -69,11 +70,11 @@ function displayDeleteButton(book) {
 }
 
 function openFormPopUp() {
-  formContainer.style.display = "block"; 
+  formPopUp.style.display = "block"; 
 }
 
 function closeFormPopUp() {
-  formContainer.style.display = "none";
+  formPopUp.style.display = "none";
 }
 
 function submitBookToLibrary(event) {

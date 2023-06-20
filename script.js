@@ -12,11 +12,12 @@ newBookButton.addEventListener("click", openFormPopUp);
 formContainer.addEventListener("submit", submitBookToLibrary);
 cancelFormButton.addEventListener("click", closeFormPopUp);
 
-function Book(title,author,pages,read) {
+function Book(index,title,author,pages,read) {
   this.title = title;
   this.author = author;
   this.pages = pages;
   this.read = read;
+  this.index = index;
 }
 
 addBookToLibrary("The Hobbit","J.R.R. Tolkien","295","Not read")
@@ -24,7 +25,9 @@ addBookToLibrary("The Last Wish","Andrzej Sapkowski","288","Read")
 displayLibrary();
 
 function addBookToLibrary (title,author,pages,read) {
-  let bookToAdd = new Book(title,author,pages,read);
+  console.log(myLibrary.length);
+  let bookIndex = myLibrary.length === 0 ? 0 : myLibrary.length;
+  let bookToAdd = new Book(bookIndex,title,author,pages,read);
   myLibrary.push(bookToAdd);
 }
 

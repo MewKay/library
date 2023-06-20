@@ -13,6 +13,10 @@ newBookButton.addEventListener("click", openFormPopUp);
 formContainer.addEventListener("submit", submitBookToLibrary);
 cancelFormButton.addEventListener("click", closeFormPopUp);
 
+addBookToLibrary("The Hobbit","J.R.R. Tolkien","295","Not read")
+addBookToLibrary("The Last Wish","Andrzej Sapkowski","288","Read")
+displayLibrary();
+
 function Book(index,title,author,pages,read) {
   this.title = title;
   this.author = author;
@@ -20,10 +24,6 @@ function Book(index,title,author,pages,read) {
   this.read = read;
   this.index = index;
 }
-
-addBookToLibrary("The Hobbit","J.R.R. Tolkien","295","Not read")
-addBookToLibrary("The Last Wish","Andrzej Sapkowski","288","Read")
-displayLibrary();
 
 function addBookToLibrary (title,author,pages,read) {
   let bookIndex = myLibrary.length === 0 ? 0 : myLibrary.length;
@@ -43,12 +43,12 @@ function displayLibrary () {
 
 function displayTextDetails(book) {
   let bookContents = Object.values(book);
-    for(let i=0; i<3; i++) {
-      let content = document.createElement("div");
-      content.innerText = bookContents[i];
-      libraryDisplay.appendChild(content);
-    }
+  for(let i=0; i<3; i++) {
+    let content = document.createElement("div");
+    content.innerText = bookContents[i];
+    libraryDisplay.appendChild(content);
   }
+}
   
 function displayToggleReadButton(book) {
   let toggleReadStatusButton = document.createElement("button");
@@ -86,7 +86,7 @@ function submitBookToLibrary(event) {
 
   addBookToLibrary(title,author,pages,read);
   formContainer.reset();
-  formContainer.style.display = "none";
+  closeFormPopUp();
   displayLibrary();
 }
 

@@ -1,5 +1,6 @@
 let myLibrary = [];
-const libraryDisplay = document.querySelector(".library-display");
+const libraryDisplay = document.querySelector(".library-display"); 
+const formContainer = document.querySelector(".form-container");
 
 function Book(title,author,pages,read) {
   this.title = title;
@@ -26,4 +27,12 @@ function displayLibrary () {
       libraryDisplay.appendChild(content);
     }
   });
+}
+
+function openFormPopUp() {
+  formContainer.style.display = "block"; 
+}
+
+function closeFormPopUp() {
+  formContainer.style.display = "none";
 }

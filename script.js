@@ -2,9 +2,15 @@ let myLibrary = [];
 const libraryDisplay = document.querySelector(".library-display"); 
 const formContainer = document.querySelector(".form-container");
 const newBookButton = document.querySelector(".btn-add-book");
+const submitBookButton = document.querySelector(".btn-submit-book")
 const cancelFormButton = document.querySelector(".btn-cancel-form");
-
+const inputBookTitle = document.querySelector("#book-title");
+const inputBookAuthor = document.querySelector("#book-author");
+const inputBookPages = document.querySelector("#book-pages");
+const inputBookReadStatus = document.querySelector(".book-read-status:checked");
+ 
 newBookButton.addEventListener("click", openFormPopUp);
+submitBookButton.addEventListener("click", submitBookToLibrary);
 cancelFormButton.addEventListener("click", closeFormPopUp);
 
 function Book(title,author,pages,read) {
@@ -24,6 +30,7 @@ function addBookToLibrary (title,author,pages,read) {
 }
 
 function displayLibrary () {
+  
   myLibrary.forEach(book => {
     let bookContents = Object.values(book);
     for(let i=0; i<4; i++) {
@@ -40,4 +47,17 @@ function openFormPopUp() {
 
 function closeFormPopUp() {
   formContainer.style.display = "none";
+}
+
+function submitBookToLibrary(event) {
+  let title = inputBookTitle.value;
+  let author = inputBookAuthor.value;
+  let pages = inputBookPages.value;
+  let read = inputBookReadStatus.value;
+
+  addBookToLibrary(title,author,pages,read);
+  formContainer.reset();
+  displayLibrary();
+
+  event.preventDefault();
 }

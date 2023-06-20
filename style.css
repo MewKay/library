@@ -2,14 +2,44 @@
 
 :root {
   --grenat-color: #430211;
-  --ligh-brown-color: #AA8F66;
+  --light-brown-color: #AA8F66;
+  --green-color: #2A9D8F;
   --font-color-black: #1F271B;
   --font-color-white: #E5FCF5;
 }
 
 body {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
+
+/* -- Layout -- */
+
+header {
+  flex: 1;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 3rem;
+}
+
+main {
+  flex: 5;
+}
+
+.form-container {
+  display: none;
+}
+
+.library-display {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+/* -- Style -- */
 
 body, 
 button {
@@ -26,14 +56,5 @@ h1 {
 }
 
 main {
-  background-color: var(--ligh-brown-color);
-}
-
-.form-container {
-  display: none;
-}
-
-.library-display {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  background-color: var(--light-brown-color);
 }

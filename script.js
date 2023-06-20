@@ -1,5 +1,5 @@
 let myLibrary = [];
-const libraryDisplay = document.querySelector(".library-display"); 
+const libraryDisplay = document.querySelector("#books-display"); 
 const formContainer = document.querySelector(".form-container");
 const newBookButton = document.querySelector(".btn-add-book");
 const submitBookButton = document.querySelector(".btn-submit-book")
@@ -30,7 +30,7 @@ function addBookToLibrary (title,author,pages,read) {
 }
 
 function displayLibrary () {
-  
+  libraryDisplay.innerText = "";
   myLibrary.forEach(book => {
     let bookContents = Object.values(book);
     for(let i=0; i<4; i++) {

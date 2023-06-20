@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,400;0,600;0,700;0,900;1,100;1,400&family=Roboto:ital,wght@0,100;0,400;0,700;1,300;1,500&display=swap');
+
+:root {
+  --grenat-color: #430211;
+  --ligh-brown-color: #AA8F66;
+  --font-color: #1F271B;
+}
+
 .form-container {
   display: none;
 }

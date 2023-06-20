@@ -7,7 +7,6 @@ const cancelFormButton = document.querySelector(".btn-cancel-form");
 const inputBookTitle = document.querySelector("#book-title");
 const inputBookAuthor = document.querySelector("#book-author");
 const inputBookPages = document.querySelector("#book-pages");
-const inputBookReadStatus = document.querySelector(".book-read-status:checked");
  
 newBookButton.addEventListener("click", openFormPopUp);
 submitBookButton.addEventListener("click", submitBookToLibrary);
@@ -53,7 +52,7 @@ function submitBookToLibrary(event) {
   let title = inputBookTitle.value;
   let author = inputBookAuthor.value;
   let pages = inputBookPages.value;
-  let read = inputBookReadStatus.value;
+  let read = document.querySelector(".book-read-status:checked").value;
 
   addBookToLibrary(title,author,pages,read);
   formContainer.reset();

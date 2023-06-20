@@ -1,4 +1,5 @@
 let myLibrary = [];
+
 const libraryDisplay = document.querySelector("#books-display"); 
 const formContainer = document.querySelector(".form-container");
 const newBookButton = document.querySelector(".btn-add-book");
@@ -34,27 +35,37 @@ function displayLibrary () {
   libraryDisplay.innerHTML = "";
 
   myLibrary.forEach(book => {
-    let bookContents = Object.values(book);
+    displayTextDetails(book);
+    displayToggleReadButton(book);
+    displayDeleteButton(book);
+  });
+}
+
+function displayTextDetails(book) {
+  let bookContents = Object.values(book);
     for(let i=0; i<3; i++) {
       let content = document.createElement("div");
       content.innerText = bookContents[i];
       libraryDisplay.appendChild(content);
     }
+  }
+  
+function displayToggleReadButton(book) {
+  let toggleReadStatusButton = document.createElement("button");
+  toggleReadStatusButton.classList.add("btn-toggle-read-status");
+  toggleReadStatusButton.innerText = book.read;
+  toggleReadStatusButton.id = book.index;
+  toggleReadStatusButton.addEventListener("click", toggleReadStatus);
+  libraryDisplay.appendChild(toggleReadStatusButton);
+}
 
-    let toggleReadStatusButton = document.createElement("button");
-    toggleReadStatusButton.classList.add("btn-toggle-read-status");
-    toggleReadStatusButton.innerText = book.read;
-    toggleReadStatusButton.id = book.index;
-    toggleReadStatusButton.addEventListener("click", toggleReadStatus);
-    libraryDisplay.appendChild(toggleReadStatusButton);
-
-    let deleteBookButton = document.createElement("button");
-    deleteBookButton.classList.add("btn-delete-book");
-    deleteBookButton.innerText = "Delete";
-    deleteBookButton.id = book.index;
-    deleteBookButton.addEventListener("click",deleteBookFromLibrary);
-    libraryDisplay.appendChild(deleteBookButton);
-  });
+function displayDeleteButton(book) {
+  let deleteBookButton = document.createElement("button");
+  deleteBookButton.classList.add("btn-delete-book");
+  deleteBookButton.innerText = "Delete";
+  deleteBookButton.id = book.index;
+  deleteBookButton.addEventListener("click",deleteBookFromLibrary);
+  libraryDisplay.appendChild(deleteBookButton);
 }
 
 function openFormPopUp() {
@@ -75,8 +86,8 @@ function submitBookToLibrary(event) {
 
   addBookToLibrary(title,author,pages,read);
   formContainer.reset();
+  formContainer.style.display = "none";
   displayLibrary();
-
 }
 
 function deleteBookFromLibrary(event) {

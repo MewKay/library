@@ -25,14 +25,14 @@ addBookToLibrary("The Last Wish","Andrzej Sapkowski","288","Read")
 displayLibrary();
 
 function addBookToLibrary (title,author,pages,read) {
-  console.log(myLibrary.length);
   let bookIndex = myLibrary.length === 0 ? 0 : myLibrary.length;
   let bookToAdd = new Book(bookIndex,title,author,pages,read);
   myLibrary.push(bookToAdd);
 }
 
 function displayLibrary () {
-  libraryDisplay.innerText = "";
+  libraryDisplay.innerHTML = "";
+
   myLibrary.forEach(book => {
     let bookContents = Object.values(book);
     for(let i=0; i<4; i++) {
@@ -40,6 +40,12 @@ function displayLibrary () {
       content.innerText = bookContents[i];
       libraryDisplay.appendChild(content);
     }
+
+    let deleteBookButton = document.createElement("button");
+    deleteBookButton.classList.add("btn-delete-book");
+    deleteBookButton.innerText = "Delete";
+    deleteBookButton.id = book.index;
+    libraryDisplay.appendChild(deleteBookButton);
   });
 }
 

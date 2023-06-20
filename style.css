@@ -28,6 +28,7 @@ header {
 
 main {
   flex: 5;
+  padding: 1rem 2rem
 }
 
 .form-popup {
@@ -37,6 +38,12 @@ main {
 .library-display {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+  place-items: center;
+}
+
+#grid-header {
+  margin-bottom: 1.875rem;
 }
 
 /* -- Style -- */

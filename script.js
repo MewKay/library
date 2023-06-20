@@ -9,7 +9,7 @@ const inputBookAuthor = document.querySelector("#book-author");
 const inputBookPages = document.querySelector("#book-pages");
  
 newBookButton.addEventListener("click", openFormPopUp);
-submitBookButton.addEventListener("click", submitBookToLibrary);
+formContainer.addEventListener("submit", submitBookToLibrary);
 cancelFormButton.addEventListener("click", closeFormPopUp);
 
 function Book(title,author,pages,read) {
@@ -49,6 +49,8 @@ function closeFormPopUp() {
 }
 
 function submitBookToLibrary(event) {
+  event.preventDefault();
+
   let title = inputBookTitle.value;
   let author = inputBookAuthor.value;
   let pages = inputBookPages.value;
@@ -58,5 +60,4 @@ function submitBookToLibrary(event) {
   formContainer.reset();
   displayLibrary();
 
-  event.preventDefault();
 }

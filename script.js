@@ -1,6 +1,11 @@
 let myLibrary = [];
 const libraryDisplay = document.querySelector(".library-display"); 
 const formContainer = document.querySelector(".form-container");
+const newBookButton = document.querySelector(".btn-add-book");
+const cancelFormButton = document.querySelector(".btn-cancel-form");
+
+newBookButton.addEventListener("click", openFormPopUp);
+cancelFormButton.addEventListener("click", closeFormPopUp);
 
 function Book(title,author,pages,read) {
   this.title = title;

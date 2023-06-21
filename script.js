@@ -14,8 +14,8 @@ newBookButton.addEventListener("click", openFormPopUp);
 formContainer.addEventListener("submit", submitBookToLibrary);
 cancelFormButton.addEventListener("click", closeFormPopUp);
 
-addBookToLibrary("The Hobbit","J.R.R. Tolkien","295","Not read")
-addBookToLibrary("The Last Wish","Andrzej Sapkowski","288","Read")
+addBookToLibrary("The Hobbit","J.R.R. Tolkien","295","Not read");
+addBookToLibrary("The Last Wish","Andrzej Sapkowski","288","Read");
 displayLibrary();
 
 function Book(index,title,author,pages,read) {

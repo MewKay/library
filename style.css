@@ -31,7 +31,7 @@ header {
 
 main {
   flex: 5;
-  padding-top: 1rem;
+  padding: 2rem 5rem;
   overflow: auto;
 }
 
@@ -87,6 +87,22 @@ main {
 
 #grid-header {
   margin-bottom: 1.875rem;
+  padding-bottom: 1.875rem;
+  border-bottom: 3px solid var(--grenat-color);
+}
+
+#books-display {
+  gap: 1.5rem;
+}
+
+.btn-toggle-read-status {
+  padding: 1em 0;
+  width: 8em;
+}
+
+.btn-delete-book {
+  padding: 1em 0;
+  width: 7em;
 }
 
 /* -- Style -- */

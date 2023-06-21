@@ -27,12 +27,24 @@
   <div class="form-popup">
     <form class="form-container">
       <h2>Fill the details of your book !</h2>
-      <label for="book-title">Title :</label>
-      <input id="book-title" type="text" name="title" required />
-      <label for="book-author">Author :</label>
-      <input id="book-author" type="text" name="author" required />
-      <label for="book-pages">Number of pages :</label>
-      <input id="book-pages" type="number" name="pages" required />
+
+      <div class="text-inputs">
+        <div class="input">
+          <label for="book-title">Title :</label>
+          <input id="book-title" type="text" name="title" required />
+        </div>
+
+        <div class="input">
+          <label for="book-author">Author :</label>
+          <input id="book-author" type="text" name="author" required />
+        </div>
+          
+        <div class="input">
+          <label for="book-pages">Number of pages :</label>
+          <input id="book-pages" type="number" name="pages" required />
+        </div>
+      </div>
+      
       <fieldset>
         <legend>Have you read it ?</legend>
           <div>
@@ -44,8 +56,11 @@
             <label for="read-true"> Yes I did!</label>
           </div>
       </fieldset>
-      <button class="btn-submit-book">Submit</button>
-      <button type="reset" class="btn-cancel-form">Cancel</button>
+      
+      <div class="btn-form-container">
+        <button class="btn-submit-book">Submit</button>
+        <button type="reset" class="btn-cancel-form">Cancel</button>
+      </div>
     </form>
   </div>
 </body>

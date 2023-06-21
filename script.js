@@ -98,6 +98,7 @@ function deleteBookFromLibrary(event) {
     return +deleteBookButton.id !== book.index;
   });
 
+  updateBooksIndex();
   displayLibrary();
 }
 
@@ -108,4 +109,10 @@ function toggleReadStatus(event) {
   bookToChange.read = bookToChange.read === "Read" ? "Not Read" : "Read";
 
   displayLibrary();
+}
+
+function updateBooksIndex() {
+  for(let i=0; i<myLibrary.length; i++) {
+    myLibrary[i].index = i;
+  }
 }

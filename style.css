@@ -20,10 +20,13 @@ header {
   flex: 1;
   padding: 1rem 6rem;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: start;
+  justify-content: space-between;
+  align-items: center;
   gap: 3rem;
+}
+
+.btn-add-book {
+  padding: 1.5em 4em;
 }
 
 main {

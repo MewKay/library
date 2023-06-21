@@ -4,8 +4,8 @@
   --grenat-color: #430211;
   --light-brown-color: #AA8F66;
   --green-color: #2A9D8F;
-  --font-color-black: #1F271B;
-  --font-color-white: #E5FCF5;
+  --black-color: #1F271B;
+  --white-color: #E5FCF5;
 }
 
 body {
@@ -33,6 +33,13 @@ main {
 
 .form-popup {
   display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  width: 300px;
+  height: 300px;
+  margin: -150px 0 0 -150px;
 }
 
 .library-display {
@@ -51,7 +58,7 @@ main {
 body, 
 button {
   font-family: 'Raleway', sans-serif;
-  color: var(--font-color);
+  color: var(--black-color);
 }
 
 header {
@@ -59,9 +66,13 @@ header {
 }
 
 h1 {
-  color: var(--font-color-white);
+  color: var(--white-color);
 }
 
 main {
   background-color: var(--light-brown-color);
+}
+
+.form-popup {
+  background-color: var(--white-color);
 }

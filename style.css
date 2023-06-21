@@ -9,7 +9,7 @@
 }
 
 body {
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -29,6 +29,7 @@ header {
 main {
   flex: 5;
   padding-top: 1rem;
+  overflow: auto;
 }
 
 .form-popup {

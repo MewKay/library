@@ -14,6 +14,14 @@ body {
   flex-direction: column;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
+button:active {
+  opacity: .9;
+}
+
 /* -- Layout -- */
 
 header {
@@ -26,7 +34,7 @@ header {
 }
 
 .btn-add-book {
-  padding: 1.5em 4em;
+  padding: 1em 2em;
 }
 
 main {
@@ -119,10 +127,51 @@ header {
 
 h1 {
   color: var(--white-color);
+  font-size: 2.5rem;
+  font-weight: 900;
+  letter-spacing: 3px;
+}
+
+.btn-add-book {
+  background-color: var(--green-color);
+  color: var(--white-color);
+  font-size: 1.25em;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
 }
 
 main {
   background-color: var(--light-brown-color);
+}
+
+#grid-header {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.btn-toggle-read-status,
+.btn-delete-book {
+  font-size: .85rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  border: none;
+  border-radius: 5px;
+}
+
+.book-is-read {
+  background-color: var(--white-color);
+  color: var(--black-color);
+}
+
+.book-is-unread {
+  background-color: var(--black-color);
+  color: var(--white-color);
+}
+
+.btn-delete-book {
+  background-color: var(--grenat-color);
+  color: var(--white-color);
 }
 
 .form-popup {

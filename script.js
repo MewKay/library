@@ -53,7 +53,11 @@ function displayTextDetails(book) {
   
 function displayToggleReadButton(book) {
   let toggleReadStatusButton = document.createElement("button");
+  let bookReadStatusClass = book.read === "Read" ? "book-is-read" : "book-is-unread";
+
   toggleReadStatusButton.classList.add("btn-toggle-read-status");
+  toggleReadStatusButton.classList.add(bookReadStatusClass);
+  
   toggleReadStatusButton.innerText = book.read;
   toggleReadStatusButton.id = book.index;
   toggleReadStatusButton.addEventListener("click", toggleReadStatus);
